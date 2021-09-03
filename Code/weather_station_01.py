@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import time
 from w1thermsensor import W1ThermSensor
 
@@ -15,7 +16,7 @@ import RPi.GPIO as GPIO
 import urllib
 import http.client
 
-key = "ORX7PB1ASSHPQZ4I"
+key = os.environ.get('WRITE_KEY')
 
 
 bme = adafruit_bme280.Adafruit_BME280_I2C(i2c)
@@ -176,5 +177,5 @@ while True:
   
     #Catch the exception if the connection fails
     except:
-        print( "connection failed")
+        print("connection failed")
     
