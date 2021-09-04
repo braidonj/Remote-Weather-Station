@@ -16,6 +16,7 @@ import RPi.GPIO as GPIO
 import urllib
 import http.client
 
+import env_var
 key = os.environ.get('WRITE_KEY')
 
 
